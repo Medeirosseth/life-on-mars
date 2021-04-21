@@ -15,11 +15,9 @@ $("#form-check").on("click", () => {
       const POTD = body.url;
       const explanation = body.explanation;
       
-
       $("#showPic").append('<img src="' + POTD + '">');
       $("#pictureDescription").text(explanation);
       $("span#date").text(date);
-      
     },
     function (error) {
       $(".showErrors").text(
@@ -27,16 +25,18 @@ $("#form-check").on("click", () => {
       );
     }
   );
-  $("input:checkbox[name=pic]:checked#showPic").show();
+
+  // $("input:checkbox[name=pic]:checked#showPic").show();
 
   let promiseRover = Rover.getRover();
   promiseRover.then(function(response){
     const bodyRover = JSON.parse(response);
-      
-  },function(error){
-    $('.showErrors').text(`There was an error processing your request: ${error}`);
-  });
+    const rover = bodyRover.photos[0].img_src;
 
-  const rover = body.photos[1];
+    $("#showRover").append('<img src="' + rover + '">');
+  },
+  function(error){
+    $('.showErrors').text(`There was an error processing your request: ${error}`);
+  });  
 });
 
