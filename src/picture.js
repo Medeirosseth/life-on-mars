@@ -1,4 +1,4 @@
-export default class Picture {
+export default class Mars {
   static getMarsNews() {
     return new Promise (function (resolve, reject) {
       let request = new XMLHttpRequest();
