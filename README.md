@@ -1,6 +1,6 @@
 #### Astronomy Picture of the Day
 
-#### By _**:neckbeard:Seth Medeiros, :nail_care:Sammai Gutierrez, :detective:Carlos Mendez **
+#### By :neckbeard:Seth Medeiros, :nail_care:Sammai Gutierrez, :detective:Carlos Mendez 
 
 ## Technologies Used
 
