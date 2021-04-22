@@ -6,7 +6,8 @@ import Picture from "./picture.js";
 import Rover from "./rover.js";
 
 
-$("#form-check").on("click", () => {
+$("button#but").on("click", (event) => {
+  event.preventDefault();
   let promise = Picture.getMarsNews();
   promise.then(
     function (response) {
@@ -14,19 +15,15 @@ $("#form-check").on("click", () => {
       const date = body.date;
       const POTD = body.url;
       const explanation = body.explanation;
-      
-      $("#showPic").append('<img src="' + POTD + '">');
+
+      $("#showPic").append('<img src="' + POTD + '">').show();
       $("#pictureDescription").text(explanation);
       $("span#date").text(date);
     },
     function (error) {
-      $(".showErrors").text(
-        `There was an error processing your request: ${error}`
-      );
+      $(".showErrors").text(`There was an error processing your request: ${error}`);
     }
   );
-
-  // $("input:checkbox[name=pic]:checked#showPic").show();
 
   let promiseRover = Rover.getRover();
   promiseRover.then(function(response){

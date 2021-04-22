@@ -1,11 +1,15 @@
-/* p{
+/* #showWeather{
   display: none;
-} */
+}
 
-/* #showPic{
+#showRover{
   display: none;
-} */
+}
+
+ #showPic{
+  display: none;
+}
 
 #picoftheday{
   width: 200px;
-}
+} */
