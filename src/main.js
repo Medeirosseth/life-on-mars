@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import Picture from "./picture.js";
 import Rover from "./rover.js";
+import Giphy from "./giphy";
 
 function clearAll(){
   $("#showPic").val("");
@@ -16,6 +17,8 @@ function getElements(response){
     $("#showPic").append('<img src="' + response.url + '">').show();
     $("#pictureDescription").text(response.explanation);
     $("#date").text(response.date);
+    $("#date").show();
+    $(".jumbotron").show();
   } else {
     $('.showErrors').text(`There was an error: ${response.message}`);
   }
@@ -29,11 +32,18 @@ function getRoverElements(response){
   }
 }
 
+function getGiphyElements(response){
+  if (response){
+    $("#alien").append('<img src="' + response.data[0].images.downsizes.url + '">');
+  } else {
+    $('.showErrors').text(`Theres was an error: ${response.message}`);
+  }
+}
+
 $(document).ready(function(){
   $("button#but").click(function(event){
     event.preventDefault();
     clearAll();
-    $("#date").text(response.date).show();
     Picture.getMarsNews()
       .then(function(response){
         getElements(response);
@@ -42,6 +52,10 @@ $(document).ready(function(){
       .then(function(response){
         getRoverElements(response);
       });
+    Giphy.alien() 
+      .then(function(response){
+        getGiphyElements(response);
+      }); 
   });
 });
 

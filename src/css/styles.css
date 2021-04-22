@@ -15,6 +15,7 @@
 } */
 .jumbotron{
   display: none;
+  border: solid black;
 }
 
 h1 {
@@ -22,12 +23,26 @@ h1 {
 }
 
 .btn {
+  border: black solid;
   margin-left: 44%;
-  border: solid black;
   border-radius: 30px;
 }
 
 img {
+  border: solid black 4px;
   max-width: 100%;
   max-height: 100%;
+}
+
+h1{
+  /* color: red;
+  background-color: rgb(0, 255, 106);
+  font-style: italic; */
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
