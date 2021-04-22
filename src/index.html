@@ -4,47 +4,34 @@
     <title>The Mars News Paper</title>
   </head>
   <body>
-    <div>
+    <div class="container">
+      <br>
+      <br>
       <h1>The Mars News Paper</h1>
+      <br><br>
       <form id="form-check">
-        <div class="weather-select container">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="weather"
-            value="weather"
-          />
-          <label class="form-check-label" for="weather">Mars Weather</label>
-        </div>
-        <div class="weather-select container">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="pictureOfTheDay"
-            value="pictureOfTheDay"
-          />
-          <label class="form-check-label" for="pictureOfTheDay">Pic of the day!</label>
-        </div>
-        <div class="weather-select container">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="mars-rover"
-            value="mars-rover"
-          />
-          <label class="form-check-label" for="mars-rover">Mars rover</label>
-          <br />
-          <button type="submit" class="btn-success" id="but">submit</button>
+          <button type="submit" class="btn" id="but">NASA PIC OF THE DAY</button>
+          <br>
+          <br>
         </div>
       </form>
     </div> 
-    <div>
-      <p id="showEarth"></p>
-      <p id="showPic" id="picoftheday" ><span id="pictureDescription"></span> <br> <span id="date"></span></p>
+    <div class = "row">
+      <div class = "col">
       <p id="showRover"></p>
+      </div>
+      <div class = "col">
+        <div class="jumbotron">
+          <p id="pictureDescription"></p> 
+        </div>
+      <!-- <p id="date"></p> -->
+      <p id="showPic" id="picoftheday"></p>
+      <!-- <p id="showPic" id="picoftheday" ><span id="pictureDescription"></span> <br> <span id="date"></span></p> -->
+      </div>
       <p class="showErrors">
     </div>
+  </div>
   </body>
 </html>
 
-<!-- Martian Weather, astronomy picture of the day, views from the Mars Rover. -->
+
