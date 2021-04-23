@@ -33,8 +33,9 @@ function getRoverElements(response){
 }
 
 function getGiphyElements(response){
-  if (response){
-    $("#alien").append('<img src="' + response.data[0].images.downsizes.url + '">');
+  if (response){console.log(response.data);
+    $("#alien").append('<img src="' + response.data[0].images.downsized.url + '">');
+    
   } else {
     $('.showErrors').text(`Theres was an error: ${response.message}`);
   }
