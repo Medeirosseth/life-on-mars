@@ -33,7 +33,7 @@ function getRoverElements(response){
 }
 
 function getGiphyElements(response){
-  if (response){console.log(response.data);
+  if (response){
     $("#alien").append('<img src="' + response.data[0].images.downsized.url + '">');
     
   } else {
